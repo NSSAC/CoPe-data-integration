@@ -1,0 +1,48 @@
+{
+  "$schema": "/home/shoops/git/CoPe-data-integration/schema/meta-data.json",
+  "region": {
+    "name": "Easter Shore, VA",
+    "shape": {
+      "longitude-max": 4.3,
+      "longitude-min": 3.5,
+      "latitude-max": 45.5,
+      "latitude-min": 38.7
+    }
+  },
+  "description": {
+    "title": "some character limited text",
+    "text": "some character limited text some character limited text"
+  },
+  "event": "Isabel 2003 and future projections",
+  "data-sources": [
+    "file://adcirc_isabel_2003.json",
+    "file://adcirc_isabel_2010_slr_0_10.json",
+    "file://adcirc_isabel_2050.json"
+  ],
+  "data_columns": [
+    {
+      "name": "column_1_name",
+      "title": "displayed title",
+      "visualization_type": "choropleth",
+      "bins": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "column_2_name",
+      "title": "displayed title",
+      "visualization_type": "choropleth",
+      "bins": [
+        1,
+        2,
+        4,
+        5,
+        10
+      ]
+    }
+  ]
+}

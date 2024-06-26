@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "region": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "shape": {
+          "type": "object"
+        }
+      }
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "data-sources": {
+      "explanation": [
+        "Array of URIs containing json describing the tabular data",
+        "1. all data assumed to contain all columns referenced in the data_columns",
+        "2. each file needs to supply a spatial reference, and the column name e.g. geoid",
+        "3. each file needs to provide a date time as a separate field (as per schema).",
+        "4. json contains csv reference, description possibly (and redundantly) the time point."
+      ],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "data_columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "visualization_type": {
+            "type": "string"
+          },
+          "bins": {
+            "type": "array",
+            "explanation": [
+              "note: bins are [-infinity, value_1), [value_1, value_2), ..., [value_m, +infinity]"
+            ],
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}
